@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Me - Qanita</title>
+    <style>
+        /* === PENGATURAN WARNA & GAYA DASAR === */
+        :root {
+            --pink-soft: #FDF2F8;       /* Latar belakang pink sangat lembut */
+            --pink-muda: #FCE7F3;       /* Warna kotak isi */
+            --pink-utama: #EC4899;      /* Warna teks & garis utama */
+            --pink-tua: #BE185D;        /* Warna tulisan judul */
+            --teks-utama: #333333;      /* Warna tulisan isi */
+            --putih: #FFFFFF;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Roboto, sans-serif;
+        }
+
+        body {
+            background-color: var(--pink-soft);
+            min-height: 100vh;
+            padding: 40px 20px;
+            line-height: 1.6;
+        }
+
+        /* === KOTAK UTAMA === */
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: var(--putih);
+            padding: 40px 35px;
+            border-radius: 20px;
+            box-shadow: 0 8px 25px rgba(236, 72, 153, 0.15);
+            border-left: 5px solid var(--pink-utama);
+
+            /* Animasi muncul */
+            animation: muncul 1s ease-out;
+        }
+
+        /* === JUDUL === */
+        h1 {
+            color: var(--pink-tua);
+            font-size: 2.5rem;
+            margin-bottom: 25px;
+            letter-spacing: 1px;
+            border-bottom: 2px solid var(--pink-muda);
+            padding-bottom: 10px;
+        }
+
+        /* === ISI TULISAN === */
+        .isi {
+            color: var(--teks-utama);
+            font-size: 1.1rem;
+            margin-bottom: 30px;
+            text-align: justify;
+        }
+
+        .isi p {
+            margin-bottom: 15px;
+        }
+
+        /* === TOMBOL KEMBALI === */
+        .tombol-kembali {
+            display: inline-block;
+            background-color: var(--pink-utama);
+            color: var(--putih);
+            text-decoration: none;
+            padding: 12px 25px;
+            border-radius: 10px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 12px rgba(236, 72, 153, 0.3);
+        }
+
+        .tombol-kembali:hover {
+            background-color: var(--pink-tua);
+            transform: translateY(-3px);
+            box-shadow: 0 6px 15px rgba(190, 24, 93, 0.3);
+        }
+
+        /* === ANIMASI === */
+        @keyframes muncul {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        
+        <h1>About Me</h1>
+
+        <div class="isi">
+        
+            <p>
+            My name is Qanita, a student of class 10 PPLG 3 at SMK Negeri Tengaran, majoring in Software Engineering. Creating this portfolio website is one of my valuable experiences and a school assignment I completed to introduce myself and showcase the skills I have. At first, I found it quite difficult because this was my first time using HTML and CSS programming languages to structure and beautify the appearance of a web page. I chose a soft pink theme because I find this color looks elegant, beautiful, and comfortable to look at. During the creation process, I learned how to arrange the page structure, input my complete personal data, manage the layout, and add animations to make the display look more lively. I also encountered several obstacles, such as messy layouts and links that did not work properly, but I kept trying to find solutions and fix them until the results matched what I wanted. Through this experience, I not only understood how to create a web page, but I also learned to be more thorough, patient, and creative in completing a task. This work motivates me even more to keep deepening my knowledge of programming and design to achieve my dream of becoming a reliable software developer in the future.
+            </p>
+        </div>
+<div class="mt-auto text-end">
+                <a href="kolaborasi.html" class="btn btn-outline-primary btn-sm px-3 rounded-pill">Kembali &larr;</a
+            </div>
+          </div>
+
+    </div>
+    
+</body>
+</html>
+

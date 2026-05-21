@@ -1,0 +1,540 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Havena - Dekorasi Rumah</title>
+    <!-- Memuat ikon Font Awesome -->
+    <link href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <!-- Memuat font dari Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+
+    <style>
+        /* Reset dasar */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #FAF9F6;
+            color: #4A4640;
+            line-height: 1.6;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        /* --- Header & Navigasi --- */
+        header {
+            background-color: #FFFFFF;
+            padding: 1rem 0;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.3rem;
+            font-weight: 500;
+            letter-spacing: 1px;
+            text-decoration: none;
+            color: #4A4640;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #4A4640;
+            font-size: 0.9rem;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: #8C7E71;
+        }
+
+        .header-icons {
+            display: flex;
+            gap: 1.5rem;
+            font-size: 1.1rem;
+        }
+
+        .header-icons a {
+            color: #4A4640;
+            text-decoration: none;
+        }
+
+        /* --- Hero Section --- */
+        .hero {
+            height: 70vh;
+            background-image: url('https://images.unsplash.com/photo-1556228453-efd6c1ff04f6?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            position: relative;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero h1 {
+            font-size: clamp(2rem, 5vw, 3rem);
+            font-weight: 400;
+            margin-bottom: 0.5rem;
+        }
+
+        .hero p {
+            font-size: 1.1rem;
+            margin-bottom: 1.5rem;
+            color: #555;
+        }
+
+        .btn-primary {
+            background-color: #C8B6A6;
+            color: white;
+            padding: 0.7rem 1.8rem;
+            text-decoration: none;
+            border-radius: 2px;
+            font-size: 0.9rem;
+            transition: background-color 0.3s;
+        }
+
+        .btn-primary:hover {
+            background-color: #8C7E71;
+        }
+
+        /* --- Best Sellers Section --- */
+        .best-sellers {
+            padding: 3rem 0;
+            background-color: white;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 1.5rem;
+            font-weight: 500;
+            margin-bottom: 2rem;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 50px;
+            height: 1px;
+            background-color: #ccc;
+            margin: 0.5rem auto 0;
+        }
+
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1.5rem;
+        }
+
+        .product-card {
+            text-align: center;
+        }
+
+        .product-img {
+            background-color: #F1EFEA;
+            padding: 1rem;
+            border-radius: 4px;
+            margin-bottom: 1rem;
+        }
+
+        .product-img img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .product-name {
+            font-size: 0.9rem;
+            margin-bottom: 0.3rem;
+        }
+
+        .product-price {
+            font-size: 0.85rem;
+            color: #777;
+        }
+
+        /* --- New Arrivals Section --- */
+        .new-arrivals {
+            padding: 3rem 0;
+            background-color: #FAF9F6;
+        }
+
+        .arrivals-content {
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+        }
+
+        .arrivals-img {
+            flex: 1;
+        }
+
+        .arrivals-img img {
+            width: 100%;
+            border-radius: 4px;
+        }
+
+        .arrivals-text {
+            flex: 1;
+        }
+
+        .arrivals-text h2 {
+            font-size: 1.8rem;
+            font-weight: 500;
+            margin-bottom: 0.5rem;
+        }
+
+        .arrivals-text p {
+            font-size: 0.95rem;
+            color: #666;
+            margin-bottom: 1.5rem;
+        }
+
+        /* --- Categories Section --- */
+        .categories {
+            padding: 3rem 0;
+            background-color: white;
+        }
+
+        .categories-title {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .categories-title h2 {
+            font-size: 1.5rem;
+            font-weight: 500;
+            margin-bottom: 0.5rem;
+        }
+
+        .categories-title p {
+            font-size: 0.9rem;
+            color: #666;
+        }
+
+        .categories-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
+        }
+
+        .category-card {
+            text-align: center;
+        }
+
+        .category-img {
+            background-color: #F1EFEA;
+            padding: 1rem;
+            border-radius: 4px;
+            margin-bottom: 1rem;
+        }
+
+        .category-img img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .category-name {
+            font-size: 0.95rem;
+            font-weight: 500;
+        }
+
+        /* --- Story & Newsletter --- */
+        .story-newsletter {
+            padding: 3rem 0;
+            background-color: #F1EFEA;
+        }
+
+        .sn-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .story {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+        }
+
+        .story-img img {
+            width: 100%;
+            border-radius: 4px;
+        }
+
+        .story-text h3 {
+            font-size: 1.3rem;
+            font-weight: 500;
+            margin-bottom: 0.5rem;
+        }
+
+        .story-text p {
+            font-size: 0.9rem;
+            color: #666;
+        }
+
+        .newsletter {
+            background-color: white;
+            padding: 2rem;
+            border-radius: 4px;
+        }
+
+        .newsletter h3 {
+            font-size: 1.3rem;
+            font-weight: 500;
+            margin-bottom: 0.5rem;
+        }
+
+        .newsletter p {
+            font-size: 0.9rem;
+            color: #666;
+            margin-bottom: 1rem;
+        }
+
+        .newsletter-form {
+            display: flex;
+        }
+
+        .newsletter-input {
+            flex: 1;
+            padding: 0.7rem;
+            border: 1px solid #ddd;
+            border-right: none;
+            border-radius: 2px 0 0 2px;
+            outline: none;
+        }
+
+        .newsletter-btn {
+            background-color: #C8B6A6;
+            color: white;
+            border: none;
+            padding: 0 1.5rem;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .newsletter-btn:hover {
+            background-color: #8C7E71;
+        }
+
+        /* --- Responsive --- */
+        @media (max-width: 768px) {
+            nav ul {
+                display: none;
+            }
+
+            .products-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .arrivals-content {
+                flex-direction: column;
+            }
+
+            .categories-grid {
+                grid-template-columns: repeat(1, 1fr);
+            }
+
+            .sn-content {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header & Navigasi -->
+    <header>
+        <div class="container header-content">
+            <a href="#" class="logo">havena</a>
+            
+            <nav>
+                <ul>
+                    <li><a href="#">Beranda</a></li>
+                    <li><a href="#">Belanja</a></li>
+                    <li><a href="#">Tentang</a></li>
+                    <li><a href="#">Kontak</a></li>
+                </ul>
+            </nav>
+
+            <div class="header-icons">
+                <a href="#"><i class="fa fa-search"></i></a>
+                <a href="#"><i class="fa fa-shopping-cart"></i></a>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="container hero-content">
+                <h1>Percantik Ruang Anda</h1>
+                <p>Dekorasi Rumah Pilihan untuk Gaya Hidup Modern</p>
+                <a href="#" class="btn-primary">Belanja Sekarang</a>
+            </div>
+        </section>
+
+        <!-- Best Sellers Section -->
+        <section class="best-sellers">
+            <div class="container">
+                <h2 class="section-title">Produk Terlaris</h2>
+                
+                <div class="products-grid">
+                    <!-- Produk 1 -->
+                    <div class="product-card">
+                        <div class="product-img">
+                            <img src=".//aset/vas.jpg" alt="Vas Keramik">
+                        </div>
+                        <h3 class="product-name">Vas Keramik</h3>
+                        <p class="product-price">Rp 50.000</p>
+                    </div>
+
+                    <!-- Produk 2 -->
+                    <div class="product-card">
+                        <div class="product-img">
+                            <img src=".//aset/bantal linen.jpg
+                            " alt="Bantal Linen">
+                        </div>
+                        <h3 class="product-name">Bantal Linen</h3>
+                        <p class="product-price">Rp 80.000</p>
+                    </div>
+
+                    <!-- Produk 3 -->
+                    <div class="product-card">
+                        <div class="product-img">
+                            <img src=".//aset/lampuu.jpg" alt="Lampu Meja Marmer">
+                        </div>
+                        <h3 class="product-name">Lampu Meja Marmer</h3>
+                        <p class="product-price">Rp 270.000</p>
+                    </div>
+
+                    <!-- Produk 4 -->
+                    <div class="product-card">
+                        <div class="product-img">
+                            <img src=".//aset/nampan.jpg" alt="Nampan Kayu">
+                        </div>
+                        <h3 class="product-name">Nampan Kayu</h3>
+                        <p class="product-price">Rp 15.000</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- New Arrivals Section -->
+        <section class="new-arrivals">
+            <div class="container arrivals-content">
+                <div class="arrivals-img">
+                    <img src=".//aset/meja tv.jpg" alt="Produk Baru">
+                </div>
+                <div class="arrivals-text">
+                    <h2>Produk Baru</h2>
+                    <p>Temukan Tren Terbaru dalam Dekorasi Rumah</p>
+                    <a href="#" class="btn-primary">Lihat Produk Baru</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Categories Section -->
+        <section class="categories">
+            <div class="container">
+                <div class="categories-title">
+                    <h2>Abadi & Elegan</h2>
+                    <p>Ubah Rumah Anda dengan Koleksi Pilihan Kami</p>
+                </div>
+                
+                <div class="categories-grid">
+                    <!-- Kategori 1 -->
+                    <div class="category-card">
+                        <div class="category-img">
+                            <img src=".//aset/wadah.jpg" alt="Vas & Wadah">
+                        </div>
+                        <h3 class="category-name">Vas & Wadah</h3>
+                    </div>
+
+                    <!-- Kategori 2 -->
+                    <div class="category-card">
+                        <div class="category-img">
+                            <img src="
+                            .//aset/tekstil.jpg" alt="Tekstil Nyaman">
+                        </div>
+                        <h3 class="category-name">Tekstil Nyaman</h3>
+                    </div>
+
+                    <!-- Kategori 3 -->
+                    <div class="category-card">
+                        <div class="category-img">
+                            <img src=".//aset/pencahayaan.jpg" alt="Pencahayaan Modern">
+                        </div>
+                        <h3 class="category-name">Pencahayaan Modern</h3>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Story & Newsletter Section -->
+        <section class="story-newsletter">
+            <div class="container sn-content">
+                <div class="story">
+                    <div class="story-img">
+                        <img src="https://images.unsplash.com/photo-1556228453-efd6c1ff04f6?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Cerita Kami">
+                    </div>
+                    <div class="story-text">
+                        <h3>Cerita Kami</h3>
+                        <p>Desain Terinspirasi untuk Rumah Anda</p>
+                    </div>
+                </div>
+
+                <div class="newsletter">
+                    <h3>Gabung Newsletter Kami</h3>
+                    <p>Daftar untuk mendapatkan penawaran eksklusif & update terbaru.</p>
+                    <form class="newsletter-form">
+                        <input type="email" placeholder="Alamat Email" class="newsletter-input">
+                        <button type="submit" class="newsletter-btn">Berlangganan</button>
+                    </form>
+                </div>
+
+            </div><div class="mt-auto text-end">
+                        <a href="kolaborasi.html" class="btn btn-outline-primary btn-sm px-3 rounded-pill">kembali &larr;</a>
+            </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2023 Havena. Rumah Mewah,Harga Murah.</p>
+        </div>
+    </footer>
+
+</body>
+</html>

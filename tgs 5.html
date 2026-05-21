@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Serene Spaces - Desain Interior Mewah</title>
+    <!-- Memuat ikon Font Awesome -->
+    <link href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <!-- Memuat font dari Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+
+    <style>
+        /* Reset dasar */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #F8F5F0;
+            color: #4A4640;
+            line-height: 1.6;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        /* --- Header & Navigasi --- */
+        header {
+            background-color: #FFFFFF;
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-weight: bold;
+            font-size: 1.1rem;
+            letter-spacing: 0.5px;
+            text-decoration: none;
+            color: #4A4640;
+        }
+
+        .logo i {
+            color: #B5A695;
+            font-size: 1.3rem;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #4A4640;
+            font-size: 0.9rem;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: #B5A695;
+        }
+
+        .btn-primary {
+            background-color: #B5A695;
+            color: white !important;
+            padding: 0.5rem 1.2rem;
+            border-radius: 4px;
+        }
+
+        .btn-primary:hover {
+            background-color: #a09283;
+        }
+
+        .menu-toggle {
+            display: none;
+            font-size: 1.5rem;
+            background: none;
+            border: none;
+            cursor: pointer;
+        }
+
+        /* --- Hero Section --- */
+        .hero {
+            height: 70vh;
+            background-image: url('https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+
+        .hero::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.1);
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+            color: white;
+        }
+
+        .hero h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(2rem, 5vw, 3.5rem);
+            font-weight: 400;
+            line-height: 1.2;
+        }
+
+        /* --- Portfolio Section --- */
+        .portfolio {
+            padding: 4rem 0;
+            background-color: white;
+        }
+
+        .portfolio h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            margin-bottom: 2rem;
+        }
+
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1rem;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            border-radius: 4px;
+        }
+
+        /* --- About Section --- */
+        .about {
+            padding: 4rem 0;
+            background-color: #D9CCC0;
+        }
+
+        .about-content {
+            display: flex;
+            align-items: center;
+            gap: 3rem;
+        }
+
+        .about-img {
+            flex: 1;
+        }
+
+        .about-img img {
+            width: 100%;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+
+        .about-text {
+            flex: 1;
+        }
+
+        .about-text h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+        }
+
+        .about-text p {
+            font-size: 0.95rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .btn-secondary {
+            background-color: white;
+            color: #4A4640;
+            padding: 0.6rem 1.5rem;
+            text-decoration: none;
+            font-size: 0.9rem;
+            border-radius: 4px;
+            transition: background-color 0.3s;
+        }
+
+        .btn-secondary:hover {
+            background-color: #f0f0f0;
+        }
+
+        /* --- Services Section --- */
+        .services {
+            padding: 4rem 0;
+            background-color: white;
+        }
+
+        .services-content {
+            display: flex;
+            align-items: center;
+            gap: 3rem;
+        }
+
+        .services-text {
+            flex: 1;
+        }
+
+        .services-text h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+        }
+
+        .services-text p {
+            font-size: 0.95rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .services-text ul {
+            list-style: none;
+            margin-bottom: 1.5rem;
+        }
+
+        .services-text li {
+            margin-bottom: 0.5rem;
+            font-size: 0.95rem;
+        }
+
+        .services-img {
+            flex: 1;
+        }
+
+        .services-img img {
+            width: 100%;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+
+        .btn-light {
+            background-color: #B5A695;
+            color: white;
+            padding: 0.6rem 1.5rem;
+            text-decoration: none;
+            font-size: 0.9rem;
+            border-radius: 4px;
+            transition: background-color 0.3s;
+        }
+
+        .btn-light:hover {
+            background-color: #a09283;
+        }
+
+        /* --- Footer --- */
+        footer {
+            padding: 2rem 0;
+            background-color: white;
+            border-top: 1px solid #e0e0e0;
+            text-align: center;
+        }
+
+        .footer-logo {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-logo i {
+            color: #B5A695;
+        }
+
+        footer p {
+            font-size: 0.8rem;
+            color: #777;
+        }
+
+        /* --- Responsive --- */
+        @media (max-width: 768px) {
+            nav ul {
+                display: none;
+            }
+
+            .menu-toggle {
+                display: block;
+            }
+
+            .gallery {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .about-content,
+            .services-content {
+                flex-direction: column;
+            }
+            
+            .services-content {
+                flex-direction: column-reverse;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header & Navigasi -->
+    <header>
+        <div class="container header-content">
+            <a href="#" class="logo">
+                <i class="fa fa-cube"></i>
+                <span>SQUARESPACE</span>
+            </a>
+            
+            <nav>
+                <ul>
+                    <li><a href="#">Beranda</a></li>
+                    <li><a href="#">Tentang Kami</a></li>
+                    <li><a href="#">Layanan</a></li>
+                    <li><a href="#">Kontak</a></li>
+                    <li><a href="#">Masuk</a></li>
+                    <li><a href="#" class="btn-primary">Daftar</a></li>
+                </ul>
+            </nav>
+
+            <button class="menu-toggle">
+                <i class="fa fa-bars"></i>
+            </button>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="hero-content">
+                <h1>RUANG YANG TENANG:<br>Desain Furnitur Mewah</h1>
+            </div>
+        </section>
+
+        <!-- Portfolio Section -->
+        <section class="portfolio">
+            <div class="container">
+                <h2>Desain Furnitur</h2>
+                <div class="gallery">
+                    <div class="gallery-item">
+                        <img src="https://i1-c.pinimg.com/736x/ae/69/e7/ae69e7b86ed589790ac1572b6ea88a57.jpg" alt="Desain Interior">
+                    </div>
+                    <div class="gallery-item">
+                        <img src="https://i.pinimg.com/736x/59/76/69/597669318992eb36ccce02b02bc91172.jpg" alt="Desain Interior">
+                    </div>
+                    <div class="gallery-item">
+                        <img src="https://i1-c.pinimg.com/1200x/62/c0/b5/62c0b50daa1fe3a38e497ffeca00c16e.jpg" alt="Desain Interior">
+                    </div>
+                    <div class="gallery-item">
+                        <img src="https://i.pinimg.com/736x/f3/0f/65/f30f6542ff4db6191a2f3f079f766c48.jpg" alt="Desain Interior">
+                    </div>
+                    <div class="gallery-item">
+                        <img src="https://i.pinimg.com/736x/2b/27/6c/2b276c5fe9b2f210e0d351013106a5c4.jpg" alt="Desain Interio">
+                    </div>
+                    <div class="gallery-item">
+                        <img src="https://i.pinimg.com/736x/08/2a/e1/082ae1328dd98a72f2b9401a7537dca5.jpg" alt="Desain Interior">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section class="about">
+            <div class="container about-content">
+                <div class="about-img">
+                    <img src="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Tentang Kami">
+                </div>
+                <div class="about-text">
+                    <h2>Tentang Kami</h2>
+                    <p>Kami berdedikasi untuk menciptakan ruang yang tidak hanya indah dipandang, tetapi juga nyaman untuk dihuni. Dengan pengalaman bertahun-tahun, kami menggabungkan seni dan fungsi untuk mewujudkan hunian impian Anda.</p>
+                    <a href="#" class="btn-secondary">Pelajari Lebih Lanjut</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Services Section -->
+        <section class="services">
+            <div class="container services-content">
+                <div class="services-text">
+                    <h2>Layanan Kami</h2>
+                    <p>Kami menyediakan berbagai layanan lengkap untuk kebutuhan desain interior Anda, mulai dari konsep hingga pelaksanaan.</p>
+                    <ul>
+                        <li>• Pemilihan Palet Warna</li>
+                        <li>• Desain Interior</li>
+                        <li>• Kustomisasi Furnitur</li>
+                        <li>• Kontraktor & Eksekusi</li>
+                        <li>• Layanan Purna Jual</li>
+                    </ul>
+                    <a href="#" class="btn-light">Lihat Selengkapnya</a>
+                </div>
+                <div class="services-img">
+                    <img src="https://i1-c.pinimg.com/1200x/6d/7b/7b/6d7b7b4be125ca5f1166784e02a0a54e.jpg" alt="Layanan Kami">
+                </div>
+          <div class="mt-auto text-end">
+                        <a href="kolaborasi.html" class="btn btn-outline-primary btn-sm px-3 rounded-pill">kembali &larr;</a>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-logo">
+                <i class="fa fa-cube"></i>
+                <span>SQUARESPACE</span>
+            </div>
+            <p>&copy; 2023 Squarespace. Semua hak dilindungi.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
